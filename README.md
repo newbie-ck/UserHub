@@ -37,6 +37,6 @@ UserHub is a simple application for managing user registration and login using R
 
 ## Take Note
 
-**Run Queue Job:**
+**Run the seeder to create a first admin account.**
 ```bash
-    Run the queue job to use concurrent operations, allowing administrators to generate dummy user records.
+    php artisan db:seed --class=AdminSeeder
