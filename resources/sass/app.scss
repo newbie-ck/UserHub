@@ -1,0 +1,74 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+@import 'node_modules/bootstrap-icons/font/bootstrap-icons.scss';
+
+body {
+    background-color: #dfdfdf;
+}
+
+.navbar-laravel {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    z-index: 3;
+}
+
+/* Custom styles for the logo */
+.logo {
+    font-family: 'Arial', sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: #dc3545;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-left: 1rem;
+}
+
+.userhub-modal {
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    align-items: center;
+    justify-content: center;
+  
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  
+    .close-button {
+      position: absolute;
+      right: 1rem;
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #dc3545;
+}
+
+.odometer {
+    font-size: 2rem;
+}
+
+/* Additional styles for responsiveness */
+@media screen and (max-width: 768px) {
+    .logo {
+        font-size: 36px;
+    }
+}
