@@ -18,6 +18,7 @@ class AuthController extends Controller
                     'required',
                     'string',
                     'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,15}$/',
+                    'confirmed'
                 ],
                 'phone_number' => 'required|string|unique:users,phone_number|regex:/^601\d{8,9}$/'
             ], 

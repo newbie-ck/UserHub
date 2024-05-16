@@ -19,8 +19,8 @@
                 <p class="text-start"><small class="text-danger" v-if="errors && errors.password">{{ errors.password[0] }}</small></p>
             </div>
             <div class="form-group mb-4">
-                <input type="password" v-model="confirm_password" class="form-control" placeholder="Confirm Password" required>
-                <p class="text-start"><small class="text-danger" v-if="errors && errors.confirm_password">{{ errors.confirm_password[0] }}</small></p>
+                <input type="password" v-model="password_confirmation" class="form-control" placeholder="Confirm Password" required>
+                <p class="text-start"><small class="text-danger" v-if="errors && errors.password_confirmation">{{ errors.password_confirmation[0] }}</small></p>
             </div>
             <div class="form-group mb-4">
                 <input type="text" v-model="phone_number" class="form-control" placeholder="Phone Number" required>
@@ -43,7 +43,7 @@ export default {
             email: '',
             username: '',
             password: '',
-            confirm_password: '',
+            password_confirmation: '',
             phone_number: '',
             errors: null,
         }
@@ -56,7 +56,7 @@ export default {
                 email: this.email,
                 username: this.username,
                 password: this.password,
-                confirm_password: this.confirm_password,
+                password_confirmation: this.password_confirmation,
                 phone_number: this.phone_number
             };
 
@@ -75,8 +75,10 @@ export default {
                     // Handle error response
                     alert('Registration failed. Please try again later.');
                     this.errors = error.response.data.errors
-                    if (this.password != this.confirm_password) {
-                        this.errors['confirm_password'] = ['Password and Confirm Password does not match']
+                    console.log(this.errors.password[0])
+
+                    if (this.errors && this.errors.password[0] == 'The password confirmation does not match.') {
+                        this.errors['password_confirmation'] = ['The password confirmation does not match.']
                     }
                     console.error(error);
                 });
